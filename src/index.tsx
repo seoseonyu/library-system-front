@@ -4,11 +4,19 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import User from "./pages/user";
+import RootRouter from "./router/root.router";
+import UserRouter from "./router/user.router";
 
 const router = createBrowserRouter([
   {
-    path: "/user",
-    element: <User />,
+    path: "/",
+    element: <RootRouter />,
+    children: [
+      {
+        path: "user",
+        element: <UserRouter />,
+      },
+    ],
   },
 ]);
 

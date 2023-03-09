@@ -9,7 +9,7 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Layout, Menu, theme } from "antd";
+import { Menu } from "antd";
 import Sider from "antd/es/layout/Sider";
 import React from "react";
 
