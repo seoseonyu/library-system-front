@@ -5,7 +5,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu, MenuProps, Space } from "antd";
 import { Key, ReactNode, useState } from "react";
-import { Outlet } from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -35,9 +35,9 @@ const items: MenuItem[] = [
 
 const UserRoute = () => {
   const [collapsed, setCollapsed] = useState(false);
-
+  const navigate = useNavigate();
   const onClickMenuHandler: MenuProps["onClick"] = (info) => {
-    window.history.pushState({}, "", `${info.key}`);
+    navigate(`/user/${info.key}`);
   };
 
   return (
