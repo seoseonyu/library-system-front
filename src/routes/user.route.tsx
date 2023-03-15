@@ -36,10 +36,6 @@ const items: MenuItem[] = [
 const UserRoute = () => {
   const [collapsed, setCollapsed] = useState(false);
 
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
-  };
-
   const onClickMenuhandler: MenuProps["onClick"] = (info) => {
     window.history.pushState({}, "", `${info.key}`);
   };
@@ -51,7 +47,7 @@ const UserRoute = () => {
           style={{ overflow: "auto", height: "100vh", width: 256 }}
           collapsible
           collapsed={collapsed}
-          onClick={toggleCollapsed}
+          onCollapse={(value) => setCollapsed(value)}
         >
           <div
             style={{
