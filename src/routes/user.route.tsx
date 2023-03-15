@@ -36,7 +36,7 @@ const items: MenuItem[] = [
 const UserRoute = () => {
   const [collapsed, setCollapsed] = useState(false);
 
-  const onClickMenuhandler: MenuProps["onClick"] = (info) => {
+  const onClickMenuHandler: MenuProps["onClick"] = (info) => {
     window.history.pushState({}, "", `${info.key}`);
   };
 
@@ -62,7 +62,7 @@ const UserRoute = () => {
             defaultOpenKeys={[]}
             mode="inline"
             items={items}
-            onClick={onClickMenuhandler}
+            onClick={onClickMenuHandler}
           />
           <p>{collapsed}</p>
         </Sider>
