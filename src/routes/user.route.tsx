@@ -3,11 +3,12 @@ import {
   BookOutlined,
   DashboardOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu, MenuProps, Space } from "antd";
-import { Key, ReactNode, useState } from "react";
+import {Layout, Menu, MenuProps, Space} from "antd";
+import {Key, ReactNode, useState} from "react";
 import {Outlet, useNavigate} from "react-router-dom";
+import Header from "../components/common/header/Header";
 
-const { Header, Footer, Sider, Content } = Layout;
+const {Footer, Sider, Content} = Layout;
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -28,9 +29,9 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem("대시보드", "dashboard", <DashboardOutlined />),
-  getItem("도서대출", "book", <BarcodeOutlined />),
-  getItem("대출관리", "manage", <BookOutlined />),
+  getItem("대시보드", "dashboard", <DashboardOutlined/>),
+  getItem("도서대출", "book", <BarcodeOutlined/>),
+  getItem("대출관리", "manage", <BookOutlined/>),
 ];
 
 const UserRoute = () => {
@@ -41,10 +42,10 @@ const UserRoute = () => {
   };
 
   return (
-    <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
+    <Space direction="vertical" style={{width: "100%"}} size={[0, 48]}>
       <Layout hasSider>
         <Sider
-          style={{ overflow: "auto", height: "100vh", width: 256 }}
+          style={{overflow: "auto", height: "100vh", width: 256}}
           collapsible
           collapsed={collapsed}
           onCollapse={(value) => setCollapsed(value)}
@@ -67,9 +68,9 @@ const UserRoute = () => {
           <p>{collapsed}</p>
         </Sider>
         <Layout>
-          <Header>Header</Header>
-          <Content style={{ padding: 10 }}>
-            <Outlet />
+          <Header title={'Dashboard'}/>
+          <Content style={{padding: 10}}>
+            <Outlet/>
           </Content>
           <Footer>Footer</Footer>
         </Layout>

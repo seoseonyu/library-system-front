@@ -1,10 +1,17 @@
 import {Outlet} from "react-router-dom";
+import styled from "styled-components";
 
 const UserDashboard = () => {
   return (
-    <div>
+    <BackgroundWrap>
       아이템
-    </div>
+    </BackgroundWrap>
   )
 };
 export default UserDashboard
+
+const BackgroundWrap = styled.div`
+  
+  background-color: #001529;
+
+`;
