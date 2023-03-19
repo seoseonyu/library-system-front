@@ -5,7 +5,7 @@ import {
 } from "@ant-design/icons";
 import {Layout, Menu, MenuProps, Space} from "antd";
 import {Key, ReactNode, useState} from "react";
-import {Outlet, useNavigate} from "react-router-dom";
+import {Outlet, useMatch, useMatches, useNavigate} from "react-router-dom";
 import Header from "../components/common/header/Header";
 
 const {Footer, Sider, Content} = Layout;
@@ -30,11 +30,14 @@ function getItem(
 
 const items: MenuItem[] = [
   getItem("대시보드", "dashboard", <DashboardOutlined/>),
-  getItem("도서대출", "book", <BarcodeOutlined/>),
+  getItem("도서조회", "book", <BarcodeOutlined/>),
   getItem("대출관리", "manage", <BookOutlined/>),
 ];
 
 const UserRoute = () => {
+  const match = useMatch('/user/:child');
+  const title = match ? match.params.child ? match.params.child : 'unknown' : 'unknown';
+
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
   const onClickMenuHandler: MenuProps["onClick"] = (info) => {
@@ -68,11 +71,10 @@ const UserRoute = () => {
           <p>{collapsed}</p>
         </Sider>
         <Layout>
-          <Header title={'Dashboard'}/>
+          <Header title={title}/>
           <Content style={{padding: 10}}>
             <Outlet/>
           </Content>
-          <Footer>Footer</Footer>
         </Layout>
       </Layout>
     </Space>

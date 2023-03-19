@@ -11,7 +11,6 @@ const UserDashboard = () => {
 export default UserDashboard
 
 const BackgroundWrap = styled.div`
-  
+  height: 100%;
   background-color: #001529;
-
 `;
