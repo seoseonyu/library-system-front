@@ -1,14 +1,14 @@
 import {Outlet} from "react-router-dom";
 import styled from "styled-components";
 
-const UserDashboard = () => {
+const UserDashboardPage = () => {
   return (
     <BackgroundWrap>
       아이템
     </BackgroundWrap>
   )
 };
-export default UserDashboard
+export default UserDashboardPage
 
 const BackgroundWrap = styled.div`
   height: 100%;

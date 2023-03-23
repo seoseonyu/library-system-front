@@ -1,11 +1,7 @@
-import {
-  BarcodeOutlined,
-  BookOutlined,
-  DashboardOutlined,
-} from "@ant-design/icons";
+import {BarcodeOutlined, BookOutlined, DashboardOutlined,} from "@ant-design/icons";
 import {Layout, Menu, MenuProps, Space} from "antd";
 import {Key, ReactNode, useState} from "react";
-import {Outlet, useMatch, useMatches, useNavigate} from "react-router-dom";
+import {Outlet, useMatch, useNavigate} from "react-router-dom";
 import Header from "../components/common/header/Header";
 
 const {Footer, Sider, Content} = Layout;
