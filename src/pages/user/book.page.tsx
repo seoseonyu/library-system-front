@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import DataGrid, {Column} from "devextreme-react/data-grid";
+import {useNavigate} from "react-router-dom";
 
 const mockData = [
   {
@@ -35,6 +36,8 @@ const mockData = [
 ];
 
 export const UserBookPage = () => {
+  const navigate = useNavigate();
+
   return (
     <BackgroundWrap>
       <CustomDataGrid
