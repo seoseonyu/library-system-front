@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DataGrid, { Column } from "devextreme-react/data-grid";
+import DataGrid, {Column} from "devextreme-react/data-grid";
 
 const mockData = [
   {
@@ -43,7 +43,7 @@ export const UserBookPage = () => {
         columnAutoWidth={true}
         hoverStateEnabled={true}
         allowColumnResizing={true}
-        paging={{ enabled: true, pageSize: 20, pageIndex: 1 }}
+        paging={{enabled: true, pageSize: 20, pageIndex: 1}}
         searchPanel={{
           visible: true,
           placeholder: "검색어를 입력해주세요",
@@ -71,7 +71,7 @@ export const UserBookPage = () => {
           width={150}
           alignment="left"
         />
-        <Column dataField="title" caption="제목" alignment="left" />
+        <Column dataField="title" caption="제목" alignment="left"/>
         <Column
           dataField="author"
           caption="저자"
@@ -113,17 +113,23 @@ const BackgroundWrap = styled.div`
   display: flex;
   flex: 0 1 auto;
   margin: 10px;
-  border: 1px solid red;
   border-radius: 10px;
 `;
 
 const CustomDataGrid = styled(DataGrid)`
+
   border-radius: 10px;
-  border-radius: inherit;
+
   > .dx-datagrid {
-    border-radius: inherit;
+    padding: 10px;
+    border-radius: 10px;
   }
+
+  .dx-datagrid-rowsview {
+    border-radius: 0 0 10px 10px;
+  }
+
   .dx-toolbar {
-    padding: 10px 10px 0 10px;
+    border-radius: 10px 10px 0 0;
   }
 `;
